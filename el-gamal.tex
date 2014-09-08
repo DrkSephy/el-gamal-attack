@@ -1,0 +1,93 @@
+\documentclass[12pt, a4paper]{article}
+\setlength{\topmargin}{-2cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{16cm}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{sectsty}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{polynom}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{soul}
+\usepackage{amssymb}
+\usepackage{ulem}
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\allsectionsfont{\sffamily}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{El-Gamal Encryption}
+\fancyhead[R]{David Leonard}
+
+\vspace{0.5cm}\hspace{3.0cm}{\Large \textbf{Breaking El-Gamal Encryptions}}
+\vspace{0.25cm}
+
+\hspace{6.0cm}{\normalsize September 5, 2013}
+
+\vspace{0.25cm}
+\hspace{6.2cm}{\normalsize David Leonard}
+
+\vspace{0.25cm}
+\hspace{5.1cm}{\normalsize \texttt{DrkSephy1025@gmail.com}}
+
+\vspace{0.7cm}
+
+
+
+$$(\mathbb{Z}_{p-1}) = \mathbb{Z}_{q} X \mathbb{Z}_{2}$$
+
+$$((r_0, r_1), (m_0), (m_1) + a(r_0, r_1)) = (g^r, (g^a)^rm)$$
+             \hspace{5.0cm}$\uparrow$$\mathbb{Z}_{q}$ X $\mathbb{Z}_{2}$ \hspace{3.5cm}   $\uparrow$$(\mathbb{Z}_{p})^*$\newline
+             
+             
+$$ M \in {m_0, m_1}$$
+  \hspace{6.5cm} $\uparrow$$(\mathbb{Z}_{p})^*$	$\uparrow$(mod $q$,mod $2$)
+
+$$q(m_0, m_1) = ((\sout{qm_0}, qm_1)$$
+
+
+$$ 1 \longrightarrow 0 \longrightarrow (0,0) $$
+
+
+$$ (\mathbb{Z}_{p})^* \longrightarrow (\mathbb{Z}_{p-1}) \longrightarrow \mathbb{Z}_{q} X \mathbb{Z}_{2} $$
+
+In $\mathbb{Z_{q}} X \mathbb{Z}_{2}$, we isolate $m_1$:
+
+$$q(m_0, m_1) = (0, m_1)$$
+
+We know that the equivalent form of the above expression in the multiplicative group,  \newline
+
+$(\mathbb{Z}_{p})^*$ is exponentiation.
+
+$$\therefore  M^q | \mathbb{Z}_{q} X \mathbb{Z}_{2}$$
+
+We now see that $m_1 = 1$ $\Leftrightarrow$ $m^q$ mod $p$ $\ne 1$
+
+$$((r_0, r_1), (m_0, m_1) + a(r_0, r_1)) = (g_r, (g^a)^rm)$$
+
+Using the above information, we arrive at the following set of linear equations of M:
+
+$$(r_1, m_1 + ar_1)$$
+
+$$y = x + ar_1 \longrightarrow M = (M_0, M_1)$$
+$$y - ar_1 = x \longrightarrow M' = (M_{0'}, M_{1'}$$
+
+We know how to compute $r_1$ and $a$ from: 
+
+$$g^a = a = (a_0, a_1)$$
+
+The adversary $A$ can now efficiently compute M! 
+
+\end{document}
